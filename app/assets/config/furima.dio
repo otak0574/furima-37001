@@ -40,7 +40,7 @@
                         <mxPoint x="920" y="280" as="targetPoint"/>
                     </mxGeometry>
                 </mxCell>
-                <mxCell id="95" value="Entity" style="swimlane;childLayout=stackLayout;horizontal=1;startSize=32;horizontalStack=0;rounded=1;fontSize=14;fontStyle=0;strokeWidth=2;resizeParent=0;resizeLast=1;shadow=0;dashed=0;align=center;" vertex="1" parent="1">
+                <mxCell id="95" value="item" style="swimlane;childLayout=stackLayout;horizontal=1;startSize=32;horizontalStack=0;rounded=1;fontSize=14;fontStyle=0;strokeWidth=2;resizeParent=0;resizeLast=1;shadow=0;dashed=0;align=center;" vertex="1" parent="1">
                     <mxGeometry x="640" y="80" width="160" height="220" as="geometry"/>
                 </mxCell>
                 <mxCell id="96" value="image&#10;price&#10;name&#10;text&#10;category&#10;spec&#10;description&#10;shippng_fee&#10;shipping_address&#10;shippng_days" style="align=left;strokeColor=none;fillColor=none;spacingLeft=10;fontSize=13;verticalAlign=top;resizable=0;rotatable=0;part=1;" vertex="1" parent="95">
@@ -52,7 +52,7 @@
                 <mxCell id="110" value="number&#10;expiration_date&#10;security_code" style="align=left;strokeColor=none;fillColor=none;spacingLeft=10;fontSize=14;verticalAlign=top;resizable=0;rotatable=0;part=1;" vertex="1" parent="98">
                     <mxGeometry y="30" width="160" height="90" as="geometry"/>
                 </mxCell>
-                <mxCell id="100" value="Entity" style="swimlane;childLayout=stackLayout;horizontal=1;startSize=30;horizontalStack=0;rounded=1;fontSize=14;fontStyle=0;strokeWidth=2;resizeParent=0;resizeLast=1;shadow=0;dashed=0;align=center;" vertex="1" parent="1">
+                <mxCell id="100" value="user" style="swimlane;childLayout=stackLayout;horizontal=1;startSize=30;horizontalStack=0;rounded=1;fontSize=14;fontStyle=0;strokeWidth=2;resizeParent=0;resizeLast=1;shadow=0;dashed=0;align=center;" vertex="1" parent="1">
                     <mxGeometry x="640" y="370" width="160" height="200" as="geometry"/>
                 </mxCell>
                 <mxCell id="101" value="nickname&#10;mail&#10;entitiy-password&#10;last_name&#10;first_name&#10;last_name_kana&#10;first_name_kana&#10;birthday_year&#10;birthday_month&#10;birthday_date" style="align=left;strokeColor=none;fillColor=none;spacingLeft=10;fontSize=13;verticalAlign=top;resizable=0;rotatable=0;part=1;" vertex="1" parent="100">
@@ -69,6 +69,11 @@
                 </mxCell>
                 <mxCell id="105" value="post_number&#10;prefectures&#10;city&#10;street_address&#10;building&#10;telephone_numder" style="align=left;strokeColor=none;fillColor=none;spacingLeft=10;fontSize=14;verticalAlign=top;resizable=0;rotatable=0;part=1;" vertex="1" parent="104">
                     <mxGeometry y="30" width="160" height="120" as="geometry"/>
+                </mxCell>
+                <mxCell id="111" value="" style="edgeStyle=none;html=1;fontSize=14;" edge="1" parent="1" target="96">
+                    <mxGeometry relative="1" as="geometry">
+                        <mxPoint x="720" y="360" as="sourcePoint"/>
+                    </mxGeometry>
                 </mxCell>
             </root>
         </mxGraphModel>
