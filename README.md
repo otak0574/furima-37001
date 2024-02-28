@@ -1,4 +1,4 @@
-*Userテーブル*
+*Usersテーブル*
 |column              |Type       |Options    |
 |--------------------|-----------|-----------|
 |nickname            |string     |null: false|
@@ -13,9 +13,8 @@
 |birthday_year       |integer    |null: false|
 
 ###Association
--has_many :comments
 -has_many :items
--has_one  :pays
+-has_one  :pay
 
 
 
@@ -32,11 +31,11 @@
 |days             |text       |null: false|
 
 ###Association
--
--
+-belongs_to :user
+-has_one :order
 
 
-*payテーブル*
+*paysテーブル*
 |column           |Type       |Options    |
 |-----------------|-----------|-----------|
 |number           |integer    |null: false|
@@ -44,8 +43,8 @@
 |security_code    |integer    |null: false|
 
 ###Association
--
--
+-has_many orders
+-belongs_to user
 
 
 *orders*
@@ -59,15 +58,15 @@
 |telephone_number |integer    |null: false|
 
 ###Association
--
--
+-belongs_to :item
+-belongs_to :pay
 
 
-*comment*
+<!-- *comments*
 |column           |Type       |Options    |
 |-----------------|-----------|-----------|
-|content          |text       |null: false|
-
+|content          |text       |null: false| -->
+<!-- 
 ###Association
 -
--
+- -->
