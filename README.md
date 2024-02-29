@@ -25,9 +25,10 @@
 |category_id      |integer    |null: false|
 |spec_id          |integer    |null: false|
 |shipping_fee_id  |integer    |null: false|
-|shipping_address_id|integer    |null: false|
+|pref_id          |integer    |null: false|
 |shipping_day_id  |integer    |null: false|
 |benefit          |integer    |null: false|
+|user             |reference  |null:false, foreign_key: true|
 
 ###Association
 -belongs_to :user
@@ -37,8 +38,8 @@
 *purchase_historyテーブル*
 |column           |Type       |Options    |
 |-----------------|-----------|-----------|
-|user_id          |references |null: false|
-|item_id          |references |null: false|
+|user             |references |null: false, foreign_key: true|
+|item             |references |null: false, foreign_key: true|
 
 ###Association
 -has_one :shipping_address
@@ -50,12 +51,12 @@
 |column           |Type       |Options    |
 |-----------------|-----------|-----------|
 |post_number      |string     |null: false|
-|prefectures      |integer    |null: false|
+|pref_id          |integer    |null: false|
 |city             |string     |null: false|
-|street_address   |integer    |null: false|
-|building         |integer    |           |
+|street_address   |string     |null: false|
+|building         |string     |           |
 |telephone_number |siring     |null: false|
-|purchase_history_id|references|null: false|
+|purchase_history |references|null: false, foreign_key: true|
 
 ###Association
 -belongs_to :purchase_history
