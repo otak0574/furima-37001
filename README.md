@@ -1,4 +1,4 @@
-*Userテーブル*
+*Usersテーブル*
 |column              |Type       |Options    |
 |--------------------|-----------|-----------|
 |nickname            |string     |null: false|
@@ -8,14 +8,11 @@
 |first_name          |string     |null: false|
 |last_name_kana      |string     |null: false|
 |first_name_kana     |string     |null: false|
-|birthday_date       |integer    |null: false|
-|birthday_month      |integer    |null: false|
-|birthday_year       |integer    |null: false|
+|birthday            |date       |null: false|
 
 ###Association
--has_many :comments
 -has_many :items
--has_one  :pays
+-has_many  :purchase_histories
 
 
 
@@ -23,51 +20,53 @@
 |column           |Type       |Options    |
 |-----------------|-----------|-----------|
 |price            |integer    |null: false|
-|image            |text       |null: false|
 |name             |string     |null: false|
 |description      |text       |null: false|
-|spec             |string     |null: false|
-|shipping_fee     |text       |null: false|
-|shipping_address |text       |null: false|
-|days             |text       |null: false|
+|category_id      |integer    |null: false|
+|spec_id          |integer    |null: false|
+|shipping_fee_id  |integer    |null: false|
+|pref_id          |integer    |null: false|
+|shipping_day_id  |integer    |null: false|
+|benefit          |integer    |null: false|
+|user             |reference  |null:false, foreign_key: true|
 
 ###Association
--
--
+-belongs_to :user
+-has_one :purchase_history
 
 
-*payテーブル*
+*purchase_historyテーブル*
 |column           |Type       |Options    |
 |-----------------|-----------|-----------|
-|number           |integer    |null: false|
-|expiration_date  |integer    |null: false|
-|security_code    |integer    |null: false|
+|user             |references |null: false, foreign_key: true|
+|item             |references |null: false, foreign_key: true|
 
 ###Association
--
--
+-has_one :shipping_address
+-belongs_to :item
+-belongs_to :user
 
 
-*orders*
+*shipping_address*
 |column           |Type       |Options    |
 |-----------------|-----------|-----------|
-|post_number      |integer    |null: false|
-|prefectures      |string     |null: false|
+|post_number      |string     |null: false|
+|pref_id          |integer    |null: false|
 |city             |string     |null: false|
-|street_address   |text       |null: false|
-|building         |text       |           |
-|telephone_number |integer    |null: false|
+|street_address   |string     |null: false|
+|building         |string     |           |
+|telephone_number |siring     |null: false|
+|purchase_history |references|null: false, foreign_key: true|
 
 ###Association
--
--
+-belongs_to :purchase_history
 
 
-*comment*
+<!-- *comments*
 |column           |Type       |Options    |
 |-----------------|-----------|-----------|
-|content          |text       |null: false|
-
+|content          |text       |null: false| -->
+<!-- 
 ###Association
 -
--
+- -->
