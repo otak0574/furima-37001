@@ -2,7 +2,7 @@
 |column              |Type       |Options    |
 |--------------------|-----------|-----------|
 |nickname            |string     |null: false|
-|mail                |string     |null: false, unique: true|
+|email                |string     |null: false, unique: true|
 |encrypted_password  |string     |null: false|
 |last_name           |string     |null: false|
 |first_name          |string     |null: false|
