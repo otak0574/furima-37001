@@ -45,14 +45,14 @@ RSpec.describe User, type: :model do
       @user.password = 'aaaaaa'
       @user.password_confirmation = @user.password
       @user.valid?
-      expect(@user.errors.full_messages).to include("Password には英字と数字の両方を含めて設定してください")
+      expect(@user.errors.full_messages).to include("Password is invalid")
     end
 
     it 'パスワード半角英数字混合での入力が必須であること(数字だけの場合)' do
       @user.password = '123456'
       @user.password_confirmation = @user.password
       @user.valid?
-      expect(@user.errors.full_messages).to include("Password には英字と数字の両方を含めて設定してください")
+      expect(@user.errors.full_messages).to include("Password is invalid")
     end
 
     it 'パスワードは、6文字以上での入力が必須であること' do
