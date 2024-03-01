@@ -1,4 +1,4 @@
-*Userテーブル*
+*Usersテーブル*
 |column              |Type       |Options    |
 |--------------------|-----------|-----------|
 |nickname            |string     |null: false|
@@ -9,7 +9,6 @@
 |last_name_kana      |string     |null: false|
 |first_name_kana     |string     |null: false|
 |birthday            |date       |null: false|
-
 
 ###Association
 -has_many :items
@@ -30,6 +29,8 @@
 |benefit          |integer    |null: false|
 |user             |reference  |null:false, foreign_key: true|
 
+
+###Association
 -belongs_to :user
 -has_one :purchase_history
 
