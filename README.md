@@ -2,7 +2,7 @@
 |column              |Type       |Options    |
 |--------------------|-----------|-----------|
 |nickname            |string     |null: false|
-|mail                |string     |null: false, unique: true|
+|email                |string     |null: false, unique: true|
 |encrypted_password  |string     |null: false|
 |last_name           |string     |null: false|
 |first_name          |string     |null: false|
@@ -13,7 +13,6 @@
 ###Association
 -has_many :items
 -has_many  :purchase_histories
-
 
 
 *itemsテーブル*
@@ -29,6 +28,7 @@
 |shipping_day_id  |integer    |null: false|
 |benefit          |integer    |null: false|
 |user             |reference  |null:false, foreign_key: true|
+
 
 ###Association
 -belongs_to :user
@@ -46,7 +46,6 @@
 -belongs_to :item
 -belongs_to :user
 
-
 *shipping_address*
 |column           |Type       |Options    |
 |-----------------|-----------|-----------|
@@ -60,13 +59,3 @@
 
 ###Association
 -belongs_to :purchase_history
-
-
-<!-- *comments*
-|column           |Type       |Options    |
-|-----------------|-----------|-----------|
-|content          |text       |null: false| -->
-<!-- 
-###Association
--
-- -->
