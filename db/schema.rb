@@ -12,8 +12,19 @@
 
 ActiveRecord::Schema[7.0].define(version: 2024_02_29_062257) do
   create_table "items", charset: "utf8", force: :cascade do |t|
+    t.integer "price", null: false
+    t.string "name", null: false
+    t.text "description", null: false
+    t.integer "category_id", null: false
+    t.integer "spec_id", null: false
+    t.integer "shipping_fee_id", null: false
+    t.integer "pref_id", null: false
+    t.integer "shipping_day_id", null: false
+    t.integer "benefit", null: false
+    t.bigint "user_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["user_id"], name: "index_items_on_user_id"
   end
 
   create_table "users", charset: "utf8", force: :cascade do |t|
@@ -34,4 +45,5 @@ ActiveRecord::Schema[7.0].define(version: 2024_02_29_062257) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "items", "users"
 end
