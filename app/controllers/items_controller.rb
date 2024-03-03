@@ -1,11 +1,12 @@
 class ItemsController < ApplicationController
+  before_action :authenticate_user!, only: [:new]
 
   def index
     @items = Item.all
   end
 
   def new
-    
+    @item = Item.new
   end
 
   def create
@@ -13,7 +14,7 @@ class ItemsController < ApplicationController
     if @item.save
       redirect_to root_path
     else
-      render :new
+  render :new, status: :unprocessable_entity
     end
   end
 
@@ -25,6 +26,6 @@ class ItemsController < ApplicationController
 
   private
   def item_params
-    params.require(:item).permit(:name, :description, :price, :image).merge(user_id: current_user.id)
+    params.require(:item).permit(:image, :name, :description, :category_id, :spec_id, :shipping_fee_id, :pref_id, :shipping_day_id, :price).merge(user_id: current_user.id)
   end
 end
