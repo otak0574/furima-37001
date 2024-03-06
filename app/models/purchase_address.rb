@@ -7,6 +7,9 @@ class PurchaseAddress
     validates :item_id
     validates :post_number, format: { with: /\A[0-9]{3}-[0-9]{4}\z/, message: "is invalid. Include hyphen(- " }
     validates :pref_id, numericality: { other_than: 1, message: "can't be blank" }
+    validates :telephone_number, presence: true, format: { with: /\A\d{10,11}\z/ }
+    validates :city
+    validates :street_address
   end
 
   def save
