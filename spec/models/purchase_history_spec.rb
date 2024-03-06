@@ -14,7 +14,7 @@ RSpec.describe PurchaseAddress, type: :model do
         expect(@purchase_address).to be_valid
       end
       it '建物名がなくても保存できる' do
-        @purchase_address.building = ""
+        @purchase_address.building = ''
         expect(@purchase_address).to be_valid
       end
     end
@@ -28,7 +28,7 @@ RSpec.describe PurchaseAddress, type: :model do
       it '郵便番号は、「3桁ハイフン4桁」の半角文字列のみ保存可能なこと' do
         @purchase_address.post_number = '1234567890123456789012345678901234567890123456789'
         @purchase_address.valid?
-        expect(@purchase_address.errors.full_messages).to include("Post number is invalid. Include hyphen(- ")
+        expect(@purchase_address.errors.full_messages).to include('Post number is invalid. Include hyphen(- ')
       end
       it ' 都道府県が必須であること' do
         @purchase_address.pref_id = '1'
@@ -53,17 +53,17 @@ RSpec.describe PurchaseAddress, type: :model do
       it '電話番号は10桁以下は保存できない' do
         @purchase_address.telephone_number = '123456789'
         @purchase_address.valid?
-        expect(@purchase_address.errors.full_messages).to include("Telephone number is invalid")
+        expect(@purchase_address.errors.full_messages).to include('Telephone number is invalid')
       end
       it '電話番号は11桁以上は保存できない' do
         @purchase_address.telephone_number = '1234567890123456789'
         @purchase_address.valid?
-        expect(@purchase_address.errors.full_messages).to include("Telephone number is invalid")
+        expect(@purchase_address.errors.full_messages).to include('Telephone number is invalid')
       end
       it '電話番号は半角数値のみ保存可能なこと' do
         @purchase_address.telephone_number = '１テストTEST'
         @purchase_address.valid?
-        expect(@purchase_address.errors.full_messages).to include("Telephone number is invalid")
+        expect(@purchase_address.errors.full_messages).to include('Telephone number is invalid')
       end
       it 'tokenが空では登録できないこと' do
         @purchase_address.token = nil
