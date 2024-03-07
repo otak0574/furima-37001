@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2024_03_02_002143) do
+ActiveRecord::Schema[7.0].define(version: 2024_03_05_124110) do
   create_table "active_storage_attachments", charset: "utf8", force: :cascade do |t|
     t.string "name", null: false
     t.string "record_type", null: false
@@ -54,6 +54,28 @@ ActiveRecord::Schema[7.0].define(version: 2024_03_02_002143) do
     t.index ["user_id"], name: "index_items_on_user_id"
   end
 
+  create_table "purchase_histories", charset: "utf8", force: :cascade do |t|
+    t.bigint "user_id", null: false
+    t.bigint "item_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["item_id"], name: "index_purchase_histories_on_item_id"
+    t.index ["user_id"], name: "index_purchase_histories_on_user_id"
+  end
+
+  create_table "shipping_addresses", charset: "utf8", force: :cascade do |t|
+    t.string "post_number", null: false
+    t.integer "pref_id", null: false
+    t.string "city", null: false
+    t.string "street_address", null: false
+    t.string "building"
+    t.string "telephone_number", null: false
+    t.bigint "purchase_history_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["purchase_history_id"], name: "index_shipping_addresses_on_purchase_history_id"
+  end
+
   create_table "users", charset: "utf8", force: :cascade do |t|
     t.string "email", default: "", null: false
     t.string "encrypted_password", default: "", null: false
@@ -62,7 +84,7 @@ ActiveRecord::Schema[7.0].define(version: 2024_03_02_002143) do
     t.string "first_name", default: "", null: false
     t.string "last_name_kana", default: "", null: false
     t.string "first_name_kana", default: "", null: false
-    t.date "birthday"
+    t.date "birthday", null: false
     t.string "reset_password_token"
     t.datetime "reset_password_sent_at"
     t.datetime "remember_created_at"
@@ -75,4 +97,7 @@ ActiveRecord::Schema[7.0].define(version: 2024_03_02_002143) do
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
   add_foreign_key "active_storage_variant_records", "active_storage_blobs", column: "blob_id"
   add_foreign_key "items", "users"
+  add_foreign_key "purchase_histories", "items"
+  add_foreign_key "purchase_histories", "users"
+  add_foreign_key "shipping_addresses", "purchase_histories"
 end
