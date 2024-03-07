@@ -1,7 +1,7 @@
 class PurchaseHistoriesController < ApplicationController
   before_action :authenticate_user!
-  before_action :move_to_index
   before_action :set_item
+  before_action :move_to_index
   def index
     gon.public_key = ENV['PAYJP_PUBLIC_KEY']
     @purchase_address = PurchaseAddress.new
@@ -37,7 +37,6 @@ class PurchaseHistoriesController < ApplicationController
   end
 
   def move_to_index
-    @item = Item.find(params[:item_id])
     return if current_user.id != @item.user_id && @item.purchase_history.nil?
 
     redirect_to root_path

@@ -68,7 +68,7 @@ ActiveRecord::Schema[7.0].define(version: 2024_03_05_124110) do
     t.integer "pref_id", null: false
     t.string "city", null: false
     t.string "street_address", null: false
-    t.string "building", null: false
+    t.string "building"
     t.string "telephone_number", null: false
     t.bigint "purchase_history_id", null: false
     t.datetime "created_at", null: false
