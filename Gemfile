@@ -74,10 +74,6 @@ group :test do
   gem "webdrivers"
 end
 gem 'active_hash'
-group :production do
-  gem 'pg'
-end
-
 gem 'devise'
 gem 'pry-rails'
 gem 'active_hash'
