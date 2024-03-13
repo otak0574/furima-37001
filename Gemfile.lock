@@ -83,7 +83,7 @@ GEM
     aws-sdk-kms (1.77.0)
       aws-sdk-core (~> 3, >= 3.191.0)
       aws-sigv4 (~> 1.1)
-    aws-sdk-s3 (1.143.0)
+    aws-sdk-s3 (1.143.1)
       aws-sdk-core (~> 3, >= 3.191.0)
       aws-sdk-kms (~> 1)
       aws-sigv4 (~> 1.8)
@@ -210,6 +210,8 @@ GEM
     netrc (0.11.0)
     nio4r (2.7.0)
     nokogiri (1.16.2-x86_64-darwin)
+      racc (~> 1.4)
+    nokogiri (1.16.2-x86_64-linux)
       racc (~> 1.4)
     orm_adapter (0.5.0)
     parallel (1.24.0)
@@ -403,7 +405,7 @@ DEPENDENCIES
   webdrivers
 
 RUBY VERSION
-   ruby 3.2.0p53
+   ruby 3.2.2p53
 
 BUNDLED WITH
    2.4.10
