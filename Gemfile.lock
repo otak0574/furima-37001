@@ -94,7 +94,8 @@ GEM
     bootsnap (1.18.3)
       msgpack (~> 1.2)
     builder (3.2.4)
-git pull origin main      airbrussh (>= 1.0.0)
+    capistrano (3.18.1)
+      airbrussh (>= 1.0.0)
       i18n
       rake (>= 10.0.0)
       sshkit (>= 1.9.0)
@@ -209,8 +210,6 @@ git pull origin main      airbrussh (>= 1.0.0)
     netrc (0.11.0)
     nio4r (2.7.0)
     nokogiri (1.16.2-x86_64-darwin)
-      racc (~> 1.4)
-    nokogiri (1.16.2-x86_64-linux)
       racc (~> 1.4)
     orm_adapter (0.5.0)
     parallel (1.24.0)
@@ -404,7 +403,7 @@ DEPENDENCIES
   webdrivers
 
 RUBY VERSION
-   ruby 3.2.2p53
+   ruby 3.2.0p53
 
 BUNDLED WITH
    2.4.10
